@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+  appgateway:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    image: appgateway
+    container_name: appgateway
+    working_dir: /server
+    entrypoint: ["node", "appgateway.js"]
+    networks:
+      - portail
+    ports:
+      - "8000:8000"
+networks:
+  portail:
+    external: true

@@ -31,10 +31,14 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 
+app.get('/test', (req, res) => {
+   res.send('application gateway working');
+});
+
 app.use(new Proxy('/api/auth/',
-    'http://127.0.0.1:8001/api/').requestHandler );
+    'http://authservice:8001/api/').requestHandler );
 app.use(new Proxy('/',
-    'http://127.0.0.1:8002/').requestHandler );
+    'http://portail:8002/').requestHandler );
 
 
 // app.use('/', router);
