@@ -1,0 +1,12 @@
+{
+  "services": {
+    "authService": {
+      "address": "authservice",
+      "port": "8001"
+    },
+    "portail": {
+      "address": "portail",
+      "port": "8002"
+    }
+  }
+}

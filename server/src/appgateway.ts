@@ -1,38 +1,40 @@
 import * as express from 'express';
-import * as Path from 'path';
 import {Router} from "express";
 import bodyParser = require("body-parser");
 import {Proxy} from './proxy';
+import * as fs from "fs";
+import {AppConfig} from "./config/app-config";
 
 declare var process : {
     env: {
         PORT: number
+        ENVIRONMENT_NAME: string
     }
 };
 
-interface Headers {
-    [key: string]: any;
-}
+// interface Headers {
+//     [key: string]: any;
+// }
+
+const configName = process.env.ENVIRONMENT_NAME;
+const configPlatform = (configName) ? `.${configName}` : '';
+const configFilename = `config${configPlatform}`;
+
+const appConfig = new AppConfig();
+appConfig.initFromJSON(JSON.parse(fs.readFileSync(`configs/${configFilename}.json`, 'utf8')));
 
 const app: express.Application = express();
-const router: Router = express.Router();
 const port: number = process.env.PORT || 8000;
-// const path: string = Path.resolve('./../web/dist/portail');
 
 console.log(`dirname : ${__dirname}`);
-// console.log(`path : ${path}`);
-
-// router.get('*', function(req, res){
-//     res.sendFile('index.html', { root: path + '/' });
-// });
 
 app.use(bodyParser.urlencoded({extended:true}));// get information from html forms
 app.use(bodyParser.json());
 app.use(bodyParser.json({ type: 'application/vnd.api+json' }));
 
 
-app.get('/test', (req, res) => {
-   res.send('application gateway working');
+app.get('/config', (req: any, res: { send: (arg0: string) => void; }) => {
+   res.send(JSON.stringify(appConfig.toJSON()));
 });
 
 app.use(new Proxy('/api/auth/',
@@ -40,7 +42,5 @@ app.use(new Proxy('/api/auth/',
 app.use(new Proxy('/',
     'http://portail:8002/').requestHandler );
 
-
-// app.use('/', router);
 
 app.listen(port);

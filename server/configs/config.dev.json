@@ -1,0 +1,12 @@
+{
+  "services": {
+    "authService": {
+      "address": "localhost",
+      "port": "8001"
+    },
+    "portail": {
+      "address": "localhost",
+      "port": "8002"
+    }
+  }
+}
