@@ -10,7 +10,8 @@ RUN npm run build
 
 FROM alpine:latest as final
 RUN apk update && apk add nodejs npm git
-COPY --from=build /src/server/build /server
+COPY --from=build /src/server/build /server/app
+COPY --from=build /src/server/configs /server/configs
 COPY --from=build /src/server/package.json /server
 COPY --from=build /src/server/package-lock.json /server
 WORKDIR /server

@@ -7,8 +7,10 @@ services:
       context: .
     image: appgateway
     container_name: appgateway
+    environment:
+      - ENVIRONMENT_NAME=docker
     working_dir: /server
-    entrypoint: ["node", "appgateway.js"]
+    entrypoint: ["node", "app/appgateway.js"]
     networks:
       - portail
     ports:
