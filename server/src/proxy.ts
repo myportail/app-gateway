@@ -22,10 +22,7 @@ export class Proxy {
             headers: this.apiHeaderFromRequest(req),
             url: `${this._redirectRoute}${url}`,
             body: JSON.stringify(req.body)
-        }, (error: any, response: any, body: any) => {
-            res.status(response.statusCode);
-            res.send(response.body);
-        });
+        }, this.getResponseHandler(res));
     }
 
     protected onPutRequest(url : string,
@@ -37,15 +34,7 @@ export class Proxy {
             headers: this.apiHeaderFromRequest(req),
             url: `${this._redirectRoute}${url}`,
             body: JSON.stringify(req.body)
-        }, (error: any, response: any, body: any) => {
-            if (response) {
-                res.status(response.statusCode);
-                res.send(response.body);
-            } else {
-                res.status(404);
-                res.send();
-            }
-        });
+        }, this.getResponseHandler(res));
     }
 
     protected onGetRequest(url : string,
@@ -56,16 +45,7 @@ export class Proxy {
             headers: this.apiHeaderFromRequest(req),
             url: `${this._redirectRoute}${url}`,
             body: JSON.stringify(req.body)
-        }, (error: any, response: any, body: any) => {
-            if (response) {
-                res.status(response.statusCode);
-                res.send(response.body);
-            }
-            else {
-                res.status(404);
-                res.send();
-            }
-        });
+        }, this.getResponseHandler(res));
     }
 
     protected onDeleteRequest(url : string,
@@ -77,10 +57,7 @@ export class Proxy {
             headers: this.apiHeaderFromRequest(req),
             url: `${this._redirectRoute}${url}`,
             body: JSON.stringify(req.body)
-        }, (error: any, response: any, body: any) => {
-            res.status(response.statusCode);
-            res.send(response.body);
-        });
+        }, this.getResponseHandler(res));
     }
 
     protected apiHeaderFromRequest(req : Request) : Headers {
@@ -119,6 +96,32 @@ export class Proxy {
                 next();
         }
     }
+
+    protected getResponseHandler(res: Response) {
+        return (error: any, requestResponse: any, body: any) => {
+            if (error) {
+                console.log(error);
+            }
+
+            if (requestResponse) {
+                res.status(requestResponse.statusCode);
+                res.send(requestResponse.body);
+            } else {
+                res.status(404);
+                res.send();
+            }
+        }
+    }
+
+    // protected handleResponse(requestResponse: any, res: Response) {
+    //     if (requestResponse) {
+    //         res.status(requestResponse.statusCode);
+    //         res.send(requestResponse.body);
+    //     } else {
+    //         res.status(404);
+    //         res.send();
+    //     }
+    // }
 
     protected match(url : string) : boolean {
         return url.startsWith(this._route);

@@ -57,10 +57,34 @@ app.get('/config', (req: any, res: { send: (arg0: string) => void; }) => {
     }
 });
 
-app.use(new Proxy('/api/auth/',
-    'http://authservice:8001/api/').requestHandler );
-app.use(new Proxy('/',
-    'http://portail:8002/').requestHandler );
+if (appConfig) {
+    const services = appConfig.services.toArray();
+
+    console.log('');
+    console.log('services');
+    console.log('===========');
+    services.forEach(service => {
+        console.log(`${service.name}`);
+        service.protocols.forEach(protocol => {
+            console.log(`    ${protocol.protocol}: ${protocol.location} --> ${protocol.proxy.url}`);
+
+            app.use(new Proxy(protocol.location, protocol.proxy.url).requestHandler);
+        });
+        // console.log(`    http: ${service.http.location} --> ${service.http.proxy.url}`);
+    });
+    console.log('');
+
+    // console.log(appConfig.services.auth);
+    // console.log(appConfig.services.portail);
+
+    // app.use(new Proxy('/api/auth/',
+    //     appConfig.services.auth.url).requestHandler );
+    // app.use(new Proxy('/',
+    //     appConfig.services.portail.url).requestHandler );
 
 
-app.listen(port);
+    app.listen(port);
+}
+else {
+    console.error('no configuration found for application gateway');
+}

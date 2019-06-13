@@ -1,12 +1,27 @@
 {
+  "listen": {
+    "port": "8000"
+  },
   "services": {
-    "authService": {
-      "address": "localhost",
-      "port": "8001"
+    "auth": {
+      "http": {
+        "location": "/api/auth/",
+        "proxy": {
+          "host": "92.168.180.128",
+          "port": "31128",
+          "route": "/api"
+        }
+      }
     },
     "portail": {
-      "address": "localhost",
-      "port": "8002"
+      "http": {
+        "location": "/",
+        "proxy": {
+          "host": "localhost",
+          "port": "4200",
+          "route": "/"
+        }
+      }
     }
   }
 }

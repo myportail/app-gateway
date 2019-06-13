@@ -7,6 +7,17 @@
         {
             "type": "node",
             "request": "launch",
+            "name": "Launch AppGateway",
+            "program": "${workspaceFolder}/server/build/appgateway.js",
+            "cwd": "${workspaceFolder}/server",
+            "env": {
+                "ENVIRONMENT_NAME": "dev"
+            }
+        },
+
+        {
+            "type": "node",
+            "request": "launch",
             "name": "Launch via NPM",
             "runtimeExecutable": "npm",
             "runtimeArgs": [
