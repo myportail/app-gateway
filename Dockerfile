@@ -1,6 +1,8 @@
 FROM ubuntu:latest as build
-RUN apt -y update
-RUN apt -y install nodejs npm git
+RUN apt-get -y update
+RUN apt-get -y install curl dirmngr apt-transport-https lsb-release ca-certificates
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
+RUN apt-get -y install nodejs git
 RUN npm install -g typescript
 WORKDIR /src
 COPY ./server /src/server

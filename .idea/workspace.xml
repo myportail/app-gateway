@@ -3,14 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e2a97cf1-89c6-421f-891b-0a71798cca0a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/configs/config.dev.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/configs/config.dev.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/configs/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/server/configs/config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/appgateway.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/appgateway.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/config/app-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/config/app-config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/config/service-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/config/service-config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/config/services.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/config/services.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/proxy.ts" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/proxy.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,7 +20,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/src/appgateway.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
+            <state relative-caret-position="861">
               <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
             </state>
           </provider>
@@ -40,10 +34,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/configs/config.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/configs/config.dev.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="365">
-              <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+            <state relative-caret-position="371">
+              <caret line="27" lean-forward="true" selection-end-line="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Dockerfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="300">
+              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
             </state>
           </provider>
         </entry>
@@ -79,13 +91,13 @@
         <option value="$PROJECT_DIR$/server/src/config/app-config.ts" />
         <option value="$PROJECT_DIR$/server/configs/config.dev.json" />
         <option value="$PROJECT_DIR$/server/configs/config.docker.json" />
-        <option value="$PROJECT_DIR$/server/configs/config.json" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
-        <option value="$PROJECT_DIR$/Dockerfile" />
         <option value="$PROJECT_DIR$/server/src/proxy.ts" />
         <option value="$PROJECT_DIR$/server/src/config/service-config.ts" />
         <option value="$PROJECT_DIR$/server/src/config/protocol-config.ts" />
         <option value="$PROJECT_DIR$/server/src/appgateway.ts" />
+        <option value="$PROJECT_DIR$/Dockerfile" />
+        <option value="$PROJECT_DIR$/server/configs/config.json" />
       </list>
     </option>
   </component>
@@ -263,12 +275,12 @@
       <workItem from="1555721690613" duration="16099000" />
       <workItem from="1560187818878" duration="1730000" />
       <workItem from="1560347287104" duration="5358000" />
-      <workItem from="1560452623731" duration="707000" />
+      <workItem from="1560452623731" duration="1568000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23894000" />
+    <option name="totallyTimeSpent" value="24755000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="365" y="195" width="1479" height="933" extended-state="0" />
@@ -281,7 +293,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32934684" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.42481202" />
+      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.34711778" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -354,13 +366,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Dockerfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="13" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/configs/config.docker.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -396,13 +401,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/configs/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/config/protocol-config.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -427,22 +425,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/appgateway.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/src/config/proxy-config.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-362" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Dockerfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/appgateway.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="70" column="20" selection-start-line="70" selection-start-column="20" selection-end-line="70" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/configs/config.dev.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="365">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+        <state relative-caret-position="371">
+          <caret line="27" lean-forward="true" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/configs/config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="23" selection-start-line="20" selection-start-column="23" selection-end-line="20" selection-end-column="23" />
         </state>
       </provider>
     </entry>
