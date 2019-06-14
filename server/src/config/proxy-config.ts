@@ -15,7 +15,7 @@ export class ProxyConfig implements ISerializable<ProxyConfig> {
     }
 
     get url(): string {
-        return `${this._protocol}://${this._host}${this.portValue}${this._route}';`
+        return `${this._protocol}://${this._host}${this.portValue}${this._route}`;
     }
 
     get valid(): boolean {
