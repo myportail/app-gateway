@@ -27,7 +27,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "http": "0.0.0",
-    "http-proxy": "^1.17.0",
+    "http-proxy": "^1.18.1",
     "request": "^2.88.0",
     "typescript": "^3.3.3333"
   }
